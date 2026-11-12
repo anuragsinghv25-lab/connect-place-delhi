@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --night: #1b1035;
+  --ink: #f7f3ff;
+  --muted: #b9add6;
+  --pink: #ff5fa2;
+  --chai: #ffd23f;
+  --in-cp: #22e07a;
+  --visiting: #4aa8ff;
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-night: var(--night);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-pink: var(--pink);
+  --color-chai: var(--chai);
+  --color-incp: var(--in-cp);
+  --color-visiting: var(--visiting);
+  --font-sans: var(--font-geist-sans);
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--night);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Block letter tags floating over the 3D blocks */
+.block-tag {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: rgba(27, 16, 53, 0.82);
+  border: 1.5px solid var(--chai);
+  color: var(--chai);
+  font: 700 13px/1 var(--font-display), system-ui, sans-serif;
+}
+
+.sticker {
+  display: inline-block;
+  transform: rotate(-2deg);
+  background: var(--chai);
+  color: #1b1035;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #1b1035;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 14px;
+  background: var(--pink);
+  color: #1b1035;
+  font-weight: 700;
+  padding: 14px 22px;
+  border: 2px solid #1b1035;
+  box-shadow: 4px 4px 0 var(--chai);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--chai);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 14px;
+  padding: 14px 22px;
+  border: 2px solid rgba(247, 243, 255, 0.25);
+  color: var(--ink);
+  font-weight: 600;
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+.card {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
